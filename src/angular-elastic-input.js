@@ -58,7 +58,7 @@ angular.module('puElasticInput', []).directive('puElasticInput', ['$document', '
 
             update();
 
-            if (attrs.ngModel) {
+            if (attrs.ngModel && !attrs.ngModelOptions) {
                 scope.$watch(attrs.ngModel, update);
             } else {
                 element.on('keydown keyup focus input propertychange change', update);
